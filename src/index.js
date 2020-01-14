@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
 
-export const getAnswer = (question) => (
-	readlineSync.question(question)
-);
+const getAnswer = (text) => readlineSync.question(text);
+
+export default getAnswer;

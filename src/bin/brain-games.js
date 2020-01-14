@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { getAnswer } from '..';
+import getAnswer from '..';
 
 const greeting = 'Welcome to the Brain Games!\n';
 const nameRequest = 'May I have your name? ';
