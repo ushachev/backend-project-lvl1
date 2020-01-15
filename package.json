@@ -1,6 +1,6 @@
 {
   "name": "backend-project-lvl1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "console app Brain games",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "dist"
   ],
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-even": "dist/bin/brain-even.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.0",
