@@ -22,3 +22,24 @@ $ make install
 ```sh
 $ make start
 ```
+
+this will launch application from source code.  
+Or
+
+```sh
+$ make publish
+$ sudo npm link
+```
+
+this will create a symlink to the package after that it will become possible to launch application by
+
+```sh
+$ brain-even
+```
+
+like this
+
+[![asciicast](https://asciinema.org/a/eYdSmG7Nwue8FtSo0kxnk3M0m.svg)](https://asciinema.org/a/eYdSmG7Nwue8FtSo0kxnk3M0m)
+
+
+Run `sudo npm unlink` to remove symlink.
