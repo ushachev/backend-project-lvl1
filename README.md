@@ -20,10 +20,10 @@ $ make install
 ## Application launch
 
 ```sh
-$ make start
+$ make start game=even
 ```
 
-this will launch application from source code.  
+where parameter `game` of `make start` command may be equal anything from list [even, calc]. This will launch application from source code.  
 Or
 
 ```sh
@@ -31,7 +31,7 @@ $ make publish
 $ sudo npm link
 ```
 
-this will create a symlink to the package after that it will become possible to launch application by
+this will create a symlink to the package after that it will become possible to launch application by typing anything from list [brain-even, brain-calc]
 
 ```sh
 $ brain-even
@@ -39,7 +39,7 @@ $ brain-even
 
 like this
 
-[![asciicast](https://asciinema.org/a/eYdSmG7Nwue8FtSo0kxnk3M0m.svg)](https://asciinema.org/a/eYdSmG7Nwue8FtSo0kxnk3M0m)
+[![asciicast](https://asciinema.org/a/UtymQsIITvF31WnPoWHnk1aGk.svg)](https://asciinema.org/a/UtymQsIITvF31WnPoWHnk1aGk)
 
 
 Run `sudo npm unlink` to remove symlink.
