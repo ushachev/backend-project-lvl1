@@ -14,6 +14,7 @@ const calcMakeQuestion = () => {
   const rnd2 = random(0, 100);
   const operationSign = operation[0];
   const operationFunc = operation[1];
+
   const answer = String(operationFunc(rnd1, rnd2));
   const text = `${rnd1} ${operationSign} ${rnd2}`;
 

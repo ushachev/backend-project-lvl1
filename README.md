@@ -23,7 +23,7 @@ $ make install
 $ make start game=even
 ```
 
-where parameter `game` of `make start` command may be equal anything from list [even, calc, gcd]. This will launch application from source code.  
+where parameter `game` of `make start` command may be equal anything from list [ even, calc, gcd, progression ]. This will launch application from source code.  
 Or
 
 ```sh
@@ -31,7 +31,7 @@ $ make publish
 $ sudo npm link
 ```
 
-this will create a symlink to the package after that it will become possible to launch application by typing anything from list [brain-even, brain-calc, brain-gcd]
+this will create a symlink to the package after that it will become possible to launch application by typing anything from list [ brain-even, brain-calc, brain-gcd, brain-progression ]
 
 ```sh
 $ brain-even
@@ -39,7 +39,11 @@ $ brain-even
 
 like this
 
-[![asciicast](https://asciinema.org/a/4HQD3t0LPBe3yWSgm1lpm4A1R.svg)](https://asciinema.org/a/4HQD3t0LPBe3yWSgm1lpm4A1R)
+[![asciicast](https://asciinema.org/a/j7gQKydY4mx4hTI31JMZPIYpE.svg)](https://asciinema.org/a/j7gQKydY4mx4hTI31JMZPIYpE)
+[![asciicast](https://asciinema.org/a/GygvUYsV9gmvlGjKneU5JUezS.svg)](https://asciinema.org/a/GygvUYsV9gmvlGjKneU5JUezS)
+[![asciicast](https://asciinema.org/a/t7vYXibwB78rSleKT2AmrgGZV.svg)](https://asciinema.org/a/t7vYXibwB78rSleKT2AmrgGZV)
+[![asciicast](https://asciinema.org/a/CGBQfXfzwqYdBMKPoKpQdhWOp.svg)](https://asciinema.org/a/CGBQfXfzwqYdBMKPoKpQdhWOp)
+[![asciicast](https://asciinema.org/a/UXUlZ1qkJBQbpD8W1oCZjQGIK.svg)](https://asciinema.org/a/UXUlZ1qkJBQbpD8W1oCZjQGIK)
 
 
 Run `sudo npm unlink` to remove symlink.

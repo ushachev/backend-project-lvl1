@@ -10,6 +10,9 @@ const config = {
   rightAnswer: 'Correct!',
   rightEnd: 'Congratulations',
   wrongEnd: "Let's try again",
+  progressionStepRange: [2, 8],
+  progressionStartRange: [1, 20],
+  progressionLength: 10,
 };
 
 export default config;

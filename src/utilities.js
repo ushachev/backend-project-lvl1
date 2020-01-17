@@ -1,4 +1,7 @@
-const random = (start, end) => Math.floor(Math.random() * end) + start;
+// prettier-ignore
+const random = (start, end) => (
+  Math.floor(Math.random() * (end - start)) + start
+);
 
 const gcd = (a, b) => {
   if (a === b) return a;
