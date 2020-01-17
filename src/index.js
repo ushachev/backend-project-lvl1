@@ -29,12 +29,16 @@ const play = (game) => {
 
   return config.rightEnd;
 };
+const printResult = (result, name) => {
+  console.log(`${result}, ${name}!`);
+};
 
 export default (game) => {
   printTitle(getRules(game));
 
   const name = getAnswer(config.nameRequest);
-
   printGreeting(name);
-  console.log(`${play(game)}, ${name}!`);
+
+  const result = play(game);
+  printResult(result, name);
 };
