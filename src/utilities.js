@@ -9,7 +9,9 @@ const gcd = (a, b) => {
   const min = a < b ? a : b;
 
   for (let i = min; i > 1; i -= 1) {
-    if (a % i === 0 && b % i === 0) return i;
+    const isCommonDivisor = a % i === 0 && b % i === 0;
+
+    if (isCommonDivisor) return i;
   }
 
   return 1;
