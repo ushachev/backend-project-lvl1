@@ -2,6 +2,11 @@
   "name": "backend-project-lvl1",
   "version": "1.6.1",
   "description": "console app Brain games",
+  "keywords": [
+    "node.js",
+    "cli-application",
+    "puzzle"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
