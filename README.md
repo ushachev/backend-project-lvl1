@@ -44,6 +44,7 @@ like this
 [![asciicast](https://asciinema.org/a/t7vYXibwB78rSleKT2AmrgGZV.svg)](https://asciinema.org/a/t7vYXibwB78rSleKT2AmrgGZV)
 [![asciicast](https://asciinema.org/a/CGBQfXfzwqYdBMKPoKpQdhWOp.svg)](https://asciinema.org/a/CGBQfXfzwqYdBMKPoKpQdhWOp)
 [![asciicast](https://asciinema.org/a/UXUlZ1qkJBQbpD8W1oCZjQGIK.svg)](https://asciinema.org/a/UXUlZ1qkJBQbpD8W1oCZjQGIK)
+[![asciicast](https://asciinema.org/a/QaKFFu5cScnt20DWSHHQkBYgx.svg)](https://asciinema.org/a/QaKFFu5cScnt20DWSHHQkBYgx)
 
 
 Run `sudo npm unlink` to remove symlink.

@@ -3,15 +3,14 @@ import { random } from '../utilities';
 import config from '../config';
 
 const makeProgression = (start, step, length) => {
-  const arr = [start];
-  const iter = (counter) => {
+  const iter = (arr, counter) => {
     if (counter === length) return arr;
     arr.push(arr[counter - 1] + step);
 
-    return iter(counter + 1);
+    return iter(arr, counter + 1);
   };
 
-  return iter(1);
+  return iter([start], 1);
 };
 
 const progressionRules = 'What number is missing in the progression?';

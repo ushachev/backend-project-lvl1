@@ -1,5 +1,6 @@
 import { makeGame } from '../interfaces';
 import { random } from '../utilities';
+import config from '../config';
 
 const operations = [
   ['+', (a, b) => a + b],
@@ -10,8 +11,8 @@ const operations = [
 const calcRules = 'What is the result of the expression?';
 const calcMakeQuestion = () => {
   const operation = operations[random(0, operations.length)];
-  const rnd1 = random(0, 100);
-  const rnd2 = random(0, 100);
+  const rnd1 = random(...config.randomNumRange);
+  const rnd2 = random(...config.randomNumRange);
   const operationSign = operation[0];
   const operationFunc = operation[1];
 
