@@ -4,8 +4,6 @@ const random = (start, end) => (
 );
 
 const gcd = (a, b) => {
-  if (a === b) return a;
-
   const min = a < b ? a : b;
 
   for (let i = min; i > 1; i -= 1) {
