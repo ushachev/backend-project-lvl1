@@ -10,11 +10,10 @@ const operations = [
 
 const calcRules = 'What is the result of the expression?';
 const calcMakeQuestion = () => {
-  const operation = operations[random(0, operations.length)];
+  const randomIndex = random(0, operations.length);
+  const [operationSign, operationFunc] = operations[randomIndex];
   const rnd1 = random(...config.randomNumRange);
   const rnd2 = random(...config.randomNumRange);
-  const operationSign = operation[0];
-  const operationFunc = operation[1];
 
   const answer = String(operationFunc(rnd1, rnd2));
   const text = `${rnd1} ${operationSign} ${rnd2}`;
