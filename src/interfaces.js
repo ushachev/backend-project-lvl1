@@ -2,10 +2,10 @@ const cons = (x, y) => (fn) => fn(x, y);
 const car = (pair) => pair((x) => x);
 const cdr = (pair) => pair((x, y) => y);
 
-const makeGame = (rules, makeQuestion) => cons(rules, makeQuestion);
-const getRules = (game) => car(game);
-const getQuestionFunction = (game) => cdr(game);
+const makeGame = (rule, makeQuestion) => cons(rule, makeQuestion);
+const getRule = (game) => car(game);
+const getMakeQuestionFunction = (game) => cdr(game);
 
-const getQuestion = (game) => getQuestionFunction(game)();
+const generateQuestion = (game) => getMakeQuestionFunction(game)();
 
-export { makeGame, getRules, getQuestion };
+export { makeGame, getRule, generateQuestion };

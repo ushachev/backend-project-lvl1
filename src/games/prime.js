@@ -1,18 +1,30 @@
 import { makeGame } from '../interfaces';
-import { random } from '../utilities';
+import getRandomNum from '../utilities';
 import config from '../config';
 
-// prettier-ignore
-const primeRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const primeMakeQuestion = () => {
-  const randomNum = random(...config.randomNumRange);
+const isPrime = (number) => {
+  if (number < 2) return false;
 
-  const answer = config.primeNumList.includes(randomNum) ? 'yes' : 'no';
-  const text = String(randomNum);
+  const iter = (divisor) => {
+    if (divisor > number / 2) return true;
+    if (number % divisor === 0) return false;
 
-  return { text, answer };
+    return iter(divisor + 1);
+  };
+
+  return iter(2);
 };
 
-const primeGame = makeGame(primeRules, primeMakeQuestion);
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const makeQuestion = () => {
+  const num = getRandomNum(...config.randomNumRange);
+
+  const questionAnswer = isPrime(num) ? 'yes' : 'no';
+  const questionText = String(num);
+
+  return { questionText, questionAnswer };
+};
+
+const primeGame = makeGame(rule, makeQuestion);
 
 export default primeGame;

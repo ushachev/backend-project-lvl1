@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
-import { getRules, getQuestion } from './interfaces';
+import { getRule, generateQuestion } from './interfaces';
 import config from './config';
 
 const getAnswer = (text) => readlineSync.question(text);
 
-const printTitle = (rules) => {
-  console.log(config.welcome);
-  console.log(rules);
+const printTitle = (rule) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(rule);
   console.log();
 };
 const printGreeting = (name) => {
@@ -14,29 +14,31 @@ const printGreeting = (name) => {
   console.log();
 };
 const play = (game) => {
-  for (let i = 0; i < config.rounds; i += 1) {
-    const question = getQuestion(game);
-    console.log(`Question: ${question.text}`);
-    const answer = getAnswer('Your answer: ');
+  for (let i = 0; i < config.roundsCount; i += 1) {
+    const { questionText, questionAnswer } = generateQuestion(game);
+    console.log(`Question: ${questionText}`);
+    const userAnswer = getAnswer('Your answer: ');
 
-    if (answer === question.answer) {
-      console.log(config.rightAnswer);
+    if (userAnswer === questionAnswer) {
+      console.log('Correct!');
     } else {
-      console.log(config.wrongAnswer(answer, question.answer));
-      return config.wrongEnd;
+      console.log(
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${questionAnswer}'.`,
+      );
+      return "Let's try again";
     }
   }
 
-  return config.rightEnd;
+  return 'Congratulations';
 };
 const printResult = (result, name) => {
   console.log(`${result}, ${name}!`);
 };
 
 export default (game) => {
-  printTitle(getRules(game));
+  printTitle(getRule(game));
 
-  const name = getAnswer(config.nameRequest);
+  const name = getAnswer('May I have your name? ');
   printGreeting(name);
 
   const result = play(game);

@@ -1,31 +1,31 @@
 import { makeGame } from '../interfaces';
-import { random } from '../utilities';
+import getRandomNum from '../utilities';
 import config from '../config';
 
-const makeProgression = (start, step, length) => {
-  const iter = (arr, counter) => {
-    if (counter === length) return arr;
-    arr.push(arr[counter - 1] + step);
+const makeProgression = (start, step) => {
+  const iter = (progression, counter) => {
+    if (counter === config.progressionLength - 1) return progression;
+    progression.push(start + step * counter);
 
-    return iter(arr, counter + 1);
+    return iter(progression, counter + 1);
   };
 
-  return iter([start], 1);
+  return iter([], 0);
 };
 
-const progressionRules = 'What number is missing in the progression?';
-const progressionMakeQuestion = () => {
-  const step = random(...config.progressionStepRange);
-  const start = random(...config.progressionStartRange);
-  const progression = makeProgression(start, step, config.progressionLength);
-  const position = random(0, config.progressionLength);
+const rule = 'What number is missing in the progression?';
+const makeQuestion = () => {
+  const step = getRandomNum(...config.progressionStepRange);
+  const start = getRandomNum(...config.progressionStartRange);
+  const progression = makeProgression(start, step);
+  const position = getRandomNum(0, config.progressionLength);
 
-  const answer = String(progression[position]);
-  const text = progression.fill('..', position, position + 1).join(' ');
+  const questionAnswer = String(progression[position]);
+  const questionText = progression.fill('..', position, position + 1).join(' ');
 
-  return { text, answer };
+  return { questionText, questionAnswer };
 };
 
-const progressionGame = makeGame(progressionRules, progressionMakeQuestion);
+const progressionGame = makeGame(rule, makeQuestion);
 
 export default progressionGame;

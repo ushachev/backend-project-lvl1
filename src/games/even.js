@@ -1,17 +1,17 @@
 import { makeGame } from '../interfaces';
-import { random } from '../utilities';
+import getRandomNum from '../utilities';
 import config from '../config';
 
-const evenRules = 'Answer "yes" if the number is even, otherwise answer "no".';
-const evenMakeQuestion = () => {
-  const randomNum = random(...config.randomNumRange);
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const makeQuestion = () => {
+  const num = getRandomNum(...config.randomNumRange);
 
-  const answer = randomNum % 2 ? 'no' : 'yes';
-  const text = String(randomNum);
+  const questionAnswer = num % 2 ? 'no' : 'yes';
+  const questionText = String(num);
 
-  return { text, answer };
+  return { questionText, questionAnswer };
 };
 
-const evenGame = makeGame(evenRules, evenMakeQuestion);
+const evenGame = makeGame(rule, makeQuestion);
 
 export default evenGame;

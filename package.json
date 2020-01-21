@@ -1,13 +1,12 @@
 {
   "name": "backend-project-lvl1",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "console app Brain games",
   "keywords": [
     "node.js",
     "cli-application",
     "puzzle"
   ],
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -42,9 +41,7 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "1.19.1"
+    "eslint-plugin-import": "^2.20.0"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"

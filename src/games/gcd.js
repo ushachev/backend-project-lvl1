@@ -1,18 +1,30 @@
 import { makeGame } from '../interfaces';
-import { random, gcd } from '../utilities';
+import getRandomNum from '../utilities';
 import config from '../config';
 
-const gcdRules = 'Find the greatest common divisor of given numbers.';
-const gcdMakeQuestion = () => {
-  const rnd1 = random(...config.randomNumRange);
-  const rnd2 = random(...config.randomNumRange);
+const gcd = (a, b) => {
+  const min = a < b ? a : b;
 
-  const answer = String(gcd(rnd1, rnd2));
-  const text = `${rnd1} ${rnd2}`;
+  for (let i = min; i > 1; i -= 1) {
+    const isCommonDivisor = a % i === 0 && b % i === 0;
 
-  return { text, answer };
+    if (isCommonDivisor) return i;
+  }
+
+  return 1;
 };
 
-const gcdGame = makeGame(gcdRules, gcdMakeQuestion);
+const rule = 'Find the greatest common divisor of given numbers.';
+const makeQuestion = () => {
+  const num1 = getRandomNum(...config.randomNumRange);
+  const num2 = getRandomNum(...config.randomNumRange);
+
+  const questionAnswer = String(gcd(num1, num2));
+  const questionText = `${num1} ${num2}`;
+
+  return { questionText, questionAnswer };
+};
+
+const gcdGame = makeGame(rule, makeQuestion);
 
 export default gcdGame;
