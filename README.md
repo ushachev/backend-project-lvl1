@@ -23,7 +23,7 @@ $ make install
 $ make start game=even
 ```
 
-where parameter `game` of `make start` command may be equal anything from list [ even, calc, gcd, progression ]. This will launch application from source code.  
+where parameter `game` of `make start` command may be equal anything from list [ even, calc, gcd, progression, prime ]. This will launch application from source code.  
 Or
 
 ```sh
@@ -31,7 +31,7 @@ $ make publish
 $ sudo npm link
 ```
 
-this will create a symlink to the package after that it will become possible to launch application by typing anything from list [ brain-even, brain-calc, brain-gcd, brain-progression ]
+this will create a symlink to the package after that it will become possible to launch application by typing anything from list [ brain-even, brain-calc, brain-gcd, brain-progression, brain-prime ]
 
 ```sh
 $ brain-even
