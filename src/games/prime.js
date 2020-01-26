@@ -19,10 +19,10 @@ const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const makeQuestion = () => {
   const num = getRandomNum(...config.randomNumRange);
 
-  const questionAnswer = isPrime(num) ? 'yes' : 'no';
-  const questionText = String(num);
+  const answer = isPrime(num) ? 'yes' : 'no';
+  const text = String(num);
 
-  return { questionText, questionAnswer };
+  return { text, answer };
 };
 
 const primeGame = makeGame(rule, makeQuestion);

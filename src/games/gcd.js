@@ -19,10 +19,10 @@ const makeQuestion = () => {
   const num1 = getRandomNum(...config.randomNumRange);
   const num2 = getRandomNum(...config.randomNumRange);
 
-  const questionAnswer = String(gcd(num1, num2));
-  const questionText = `${num1} ${num2}`;
+  const answer = String(gcd(num1, num2));
+  const text = `${num1} ${num2}`;
 
-  return { questionText, questionAnswer };
+  return { text, answer };
 };
 
 const gcdGame = makeGame(rule, makeQuestion);

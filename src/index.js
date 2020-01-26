@@ -2,8 +2,6 @@ import readlineSync from 'readline-sync';
 import { getRule, generateQuestion } from './interfaces';
 import config from './config';
 
-const getAnswer = (text) => readlineSync.question(text);
-
 const printTitle = (rule) => {
   console.log('Welcome to the Brain Games!');
   console.log(rule);
@@ -15,15 +13,15 @@ const printGreeting = (name) => {
 };
 const play = (game) => {
   for (let i = 0; i < config.roundsCount; i += 1) {
-    const { questionText, questionAnswer } = generateQuestion(game);
+    const { text: questionText, answer: correctAnswer } = generateQuestion(game);
     console.log(`Question: ${questionText}`);
-    const userAnswer = getAnswer('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === questionAnswer) {
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${questionAnswer}'.`,
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
       );
       return "Let's try again";
     }
@@ -38,7 +36,7 @@ const printResult = (result, name) => {
 export default (game) => {
   printTitle(getRule(game));
 
-  const name = getAnswer('May I have your name? ');
+  const name = readlineSync.question('May I have your name? ');
   printGreeting(name);
 
   const result = play(game);

@@ -4,7 +4,7 @@ import config from '../config';
 
 const makeProgression = (start, step) => {
   const iter = (progression, counter) => {
-    if (counter === config.progressionLength - 1) return progression;
+    if (counter === config.progressionLength) return progression;
     progression.push(start + step * counter);
 
     return iter(progression, counter + 1);
@@ -18,12 +18,14 @@ const makeQuestion = () => {
   const step = getRandomNum(...config.progressionStepRange);
   const start = getRandomNum(...config.progressionStartRange);
   const progression = makeProgression(start, step);
-  const position = getRandomNum(0, config.progressionLength);
+  const missingElementPosition = getRandomNum(0, config.progressionLength - 1);
 
-  const questionAnswer = String(progression[position]);
-  const questionText = progression.fill('..', position, position + 1).join(' ');
+  const answer = String(progression[missingElementPosition]);
+  const text = progression
+    .fill('..', missingElementPosition, missingElementPosition + 1)
+    .join(' ');
 
-  return { questionText, questionAnswer };
+  return { text, answer };
 };
 
 const progressionGame = makeGame(rule, makeQuestion);

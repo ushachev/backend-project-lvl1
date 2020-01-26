@@ -6,10 +6,10 @@ const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 const makeQuestion = () => {
   const num = getRandomNum(...config.randomNumRange);
 
-  const questionAnswer = num % 2 ? 'no' : 'yes';
-  const questionText = String(num);
+  const answer = num % 2 ? 'no' : 'yes';
+  const text = String(num);
 
-  return { questionText, questionAnswer };
+  return { text, answer };
 };
 
 const evenGame = makeGame(rule, makeQuestion);

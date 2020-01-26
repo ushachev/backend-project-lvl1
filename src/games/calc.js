@@ -15,10 +15,10 @@ const makeQuestion = () => {
   const operand1 = getRandomNum(...config.randomNumRange);
   const operand2 = getRandomNum(...config.randomNumRange);
 
-  const questionAnswer = String(doOperation(operand1, operand2));
-  const questionText = `${operand1} ${signOperation} ${operand2}`;
+  const answer = String(doOperation(operand1, operand2));
+  const text = `${operand1} ${signOperation} ${operand2}`;
 
-  return { questionText, questionAnswer };
+  return { text, answer };
 };
 
 const calcGame = makeGame(rule, makeQuestion);
