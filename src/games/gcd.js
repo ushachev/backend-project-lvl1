@@ -1,4 +1,4 @@
-import { makeGame } from '../interfaces';
+import { makeQuiz } from '../interfaces';
 import getRandomNum from '../utilities';
 import config from '../config';
 
@@ -15,16 +15,16 @@ const gcd = (a, b) => {
 };
 
 const rule = 'Find the greatest common divisor of given numbers.';
-const makeQuestion = () => {
+const generatePuzzle = () => {
   const num1 = getRandomNum(...config.randomNumRange);
   const num2 = getRandomNum(...config.randomNumRange);
 
   const answer = String(gcd(num1, num2));
-  const text = `${num1} ${num2}`;
+  const question = `${num1} ${num2}`;
 
-  return { text, answer };
+  return { question, answer };
 };
 
-const gcdGame = makeGame(rule, makeQuestion);
+const gcdQuiz = makeQuiz(rule, generatePuzzle);
 
-export default gcdGame;
+export default gcdQuiz;

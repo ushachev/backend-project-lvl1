@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRule, generateQuestion } from './interfaces';
+import { getRule, getPuzzle } from './interfaces';
 import config from './config';
 
 const printTitle = (rule) => {
@@ -11,34 +11,29 @@ const printGreeting = (name) => {
   console.log(`Hello, ${name}!`);
   console.log();
 };
-const play = (game) => {
-  for (let i = 0; i < config.roundsCount; i += 1) {
-    const { text: questionText, answer: correctAnswer } = generateQuestion(game);
-    console.log(`Question: ${questionText}`);
-    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-      );
-      return "Let's try again";
-    }
-  }
-
-  return 'Congratulations';
-};
-const printResult = (result, name) => {
-  console.log(`${result}, ${name}!`);
-};
-
-export default (game) => {
-  printTitle(getRule(game));
+export default (quiz) => {
+  printTitle(getRule(quiz));
 
   const name = readlineSync.question('May I have your name? ');
   printGreeting(name);
 
-  const result = play(game);
-  printResult(result, name);
+  const holdQuiz = (round) => {
+    if (round === config.roundsCount) {
+      return `Congratulations, ${name}`;
+    }
+    const { question, answer } = getPuzzle(quiz);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer === answer) {
+      console.log('Correct!');
+    } else {
+      return `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.
+Let's try again, ${name}`;
+    }
+
+    return holdQuiz(round + 1);
+  };
+
+  console.log(holdQuiz(0));
 };

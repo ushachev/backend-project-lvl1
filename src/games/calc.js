@@ -1,4 +1,4 @@
-import { makeGame } from '../interfaces';
+import { makeQuiz } from '../interfaces';
 import getRandomNum from '../utilities';
 import config from '../config';
 
@@ -9,18 +9,18 @@ const operations = [
 ];
 
 const rule = 'What is the result of the expression?';
-const makeQuestion = () => {
+const generatePuzzle = () => {
   const index = getRandomNum(0, operations.length - 1);
   const [signOperation, doOperation] = operations[index];
   const operand1 = getRandomNum(...config.randomNumRange);
   const operand2 = getRandomNum(...config.randomNumRange);
 
   const answer = String(doOperation(operand1, operand2));
-  const text = `${operand1} ${signOperation} ${operand2}`;
+  const question = `${operand1} ${signOperation} ${operand2}`;
 
-  return { text, answer };
+  return { question, answer };
 };
 
-const calcGame = makeGame(rule, makeQuestion);
+const calcQuiz = makeQuiz(rule, generatePuzzle);
 
-export default calcGame;
+export default calcQuiz;

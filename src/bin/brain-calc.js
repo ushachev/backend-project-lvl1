@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import launchApp from '..';
-import calcGame from '../games/calc';
+import calcQuiz from '../games/calc';
 
-launchApp(calcGame);
+launchApp(calcQuiz);

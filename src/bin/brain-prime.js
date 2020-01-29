@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import launchApp from '..';
-import primeGame from '../games/prime';
+import primeQuiz from '../games/prime';
 
-launchApp(primeGame);
+launchApp(primeQuiz);

@@ -1,4 +1,4 @@
-import { makeGame } from '../interfaces';
+import { makeQuiz } from '../interfaces';
 import getRandomNum from '../utilities';
 import config from '../config';
 
@@ -16,15 +16,15 @@ const isPrime = (number) => {
 };
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const makeQuestion = () => {
+const generatePuzzle = () => {
   const num = getRandomNum(...config.randomNumRange);
 
   const answer = isPrime(num) ? 'yes' : 'no';
-  const text = String(num);
+  const question = String(num);
 
-  return { text, answer };
+  return { question, answer };
 };
 
-const primeGame = makeGame(rule, makeQuestion);
+const primeQuiz = makeQuiz(rule, generatePuzzle);
 
-export default primeGame;
+export default primeQuiz;
