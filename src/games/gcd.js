@@ -3,15 +3,14 @@ import getRandomNum from '../utilities';
 import config from '../config';
 
 const gcd = (a, b) => {
-  const min = a < b ? a : b;
+  const iter = (divisor) => {
+    if (divisor === 1) return 1;
+    const isCommonDivisor = a % divisor === 0 && b % divisor === 0;
 
-  for (let i = min; i > 1; i -= 1) {
-    const isCommonDivisor = a % i === 0 && b % i === 0;
+    return isCommonDivisor ? divisor : iter(divisor - 1);
+  };
 
-    if (isCommonDivisor) return i;
-  }
-
-  return 1;
+  return iter(a < b ? a : b);
 };
 
 const rule = 'Find the greatest common divisor of given numbers.';

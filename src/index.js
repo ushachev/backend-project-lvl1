@@ -20,7 +20,8 @@ export default (quiz) => {
 
   const holdQuiz = (round) => {
     if (round === config.roundsCount) {
-      return `Congratulations, ${name}`;
+      console.log(`Congratulations, ${name}!`);
+      return null;
     }
     const { question, answer } = getPuzzle(quiz);
     console.log(`Question: ${question}`);
@@ -28,12 +29,13 @@ export default (quiz) => {
     if (userAnswer === answer) {
       console.log('Correct!');
     } else {
-      return `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.
-Let's try again, ${name}`;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.
+Let's try again, ${name}!`);
+      return null;
     }
 
     return holdQuiz(round + 1);
   };
 
-  console.log(holdQuiz(0));
+  holdQuiz(0);
 };
