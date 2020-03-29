@@ -9,7 +9,6 @@ Educational "Project #1" is being developed as part of "Backend Javascript (node
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/6b44d0aebfee4dd31b03/maintainability)](https://codeclimate.com/github/ushachev/backend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.org/ushachev/backend-project-lvl1.svg?branch=master)](https://travis-ci.org/ushachev/backend-project-lvl1)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Setup
 
