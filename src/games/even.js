@@ -1,6 +1,6 @@
-import { makeQuiz } from '../interfaces';
-import getRandomNum from '../utilities';
-import config from '../config';
+import { makeQuiz } from '../interfaces.js';
+import getRandomNum from '../utilities.js';
+import config from '../config.js';
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 const generatePuzzle = () => {

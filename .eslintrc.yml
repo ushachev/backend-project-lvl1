@@ -2,9 +2,6 @@ env:
   node: true
 extends:
   - airbnb-base
-plugins:
-  - babel
-parser: babel-eslint
-rules: {
-  no-console: 0,
-}
+rules:
+  no-console: 0
+  import/extensions: 0

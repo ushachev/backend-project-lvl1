@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import { getRule, getPuzzle } from './interfaces';
-import config from './config';
+import { getRule, getPuzzle } from './interfaces.js';
+import config from './config.js';
 
 const printTitle = (rule) => {
   console.log('Welcome to the Brain Games!');
